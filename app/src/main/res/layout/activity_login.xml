@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/appLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="190"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/logoFit"
+            android:text="@string/fit" />
+
+        <TextView
+            android:id="@+id/kit"
+            style="@style/logoKit"
+            android:text="@string/kit" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/loginText"
+        android:layout_weight="122"
+        android:text="@string/welcome"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_xlarge" />
+
+
+    <TextView
+        style="@style/loginText"
+        android:layout_weight="35"
+        android:text="@string/sign_into_your_account"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/text_size_large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="190"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextEmailLogin"
+            style="@style/loginEditText"
+            android:autofillHints="emailAddress"
+            android:drawableEnd="@drawable/letter"
+            android:hint="@string/email_id"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="@dimen/drawer_item_vertical_padding" />
+
+        <EditText
+            android:id="@+id/editTextPasswordLogin"
+            style="@style/loginEditText"
+            android:layout_marginTop="10dp"
+            android:autofillHints="password"
+            android:drawableEnd="@drawable/lock"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingBottom="@dimen/drawer_item_vertical_padding" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/loginButton"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/register_now"
+        style="@style/loginAction"
+        android:text="@string/no_account_register_now" />
+
+
+</LinearLayout>

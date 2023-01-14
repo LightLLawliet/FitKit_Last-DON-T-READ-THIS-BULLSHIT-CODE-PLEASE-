@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mainToolbar"
+            style="@style/mainToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/hamburgerIcon"
+                    android:layout_width="55dp"
+                    android:layout_marginStart="-16dp"
+                    android:layout_height="55dp"
+                    android:contentDescription="@string/hamburger"
+                    android:padding="15dp"
+                    android:src="@drawable/hamburger" />
+
+                <TextView
+                    android:id="@+id/fragmentName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/faustina_regular"
+                    android:gravity="center"
+                    android:lineHeight="30sp"
+                    android:text="@string/home"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large" />
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="15dp"
+                    android:contentDescription="@string/search"
+                    android:src="@drawable/search" />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dataContainer"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="@dimen/zero_width"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainToolbar" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="?attr/actionBarSize"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                style="@style/guidelineLeft"
+                app:layout_constraintGuide_begin="@dimen/activity_horizontal_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRight"
+                style="@style/guidelineRight"
+                app:layout_constraintGuide_end="@dimen/activity_horizontal_margin" />
+
+
+            <LinearLayout
+                android:id="@+id/layoutHeader"
+                style="@style/layoutHeader"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".3125"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/headerIcon"
+                    style="@style/headerIcon"
+                    android:src="@drawable/man"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/username"
+                    style="@style/headerUsername"
+                    android:text="@string/user_name"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                    app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                    app:layout_constraintTop_toBottomOf="@id/headerIcon" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/appDrawerHomeItem"
+                style="@style/appDrawerItem"
+                android:layout_marginTop="30dp"
+                android:text="@string/home"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
+
+            <TextView
+                android:id="@+id/appDrawerAboutItem"
+                style="@style/appDrawerItem"
+                android:text="@string/about"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/appDrawerHomeItem" />
+
+            <TextView
+                android:id="@+id/appDrawerExercisesItem"
+                style="@style/appDrawerItem"
+                android:text="@string/exercises"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/appDrawerAboutItem" />
+
+            <TextView
+                android:id="@+id/appDrawerPricesItem"
+                style="@style/appDrawerItem"
+                android:text="@string/prices"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/appDrawerExercisesItem" />
+
+            <TextView
+                android:id="@+id/appDrawerContactItem"
+                style="@style/appDrawerItem"
+                android:text="@string/contact"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/appDrawerPricesItem" />
+
+            <TextView
+                android:id="@+id/appDrawerMoreItem"
+                style="@style/appDrawerItem"
+                android:text="@string/more"
+                app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/appDrawerContactItem" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:fontFamily="@font/faustina_regular"
+            android:gravity="center"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
