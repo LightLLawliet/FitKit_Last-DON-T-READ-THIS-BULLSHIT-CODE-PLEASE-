@@ -39,4 +39,20 @@
     <string name="email_id">Email Id*</string>
     <string name="sign_up">Sign Up</string>
     <string name="create_your_account">Create Your Account</string>
+    <string name="workout_exercises">Workout Exercises</string>
+    <string name="training_plan">Training Plan</string>
+    <string name="shoulder_press">Shoulder Press</string>
+    <string name="walking_is_simple_yet_powerful_exercise_for_your_body">Walking is simple, yet powerful exercise for your body</string>
+    <string name="jogging">Jogging</string>
+    <string name="abs_exercise">ABS exercise</string>
+    <string name="jogging_is_not_so_simple_but_still_powerful_exercise_for_your_body">Jogging is not so simple, but still powerful exercise for your body</string>
+    <string name="abs_is_hard_telling_that_time_is_so_fast_pretty_funny_though">ABS is hard. Time is so fast? Pretty funny, though. One minute = an hour</string>
+    <string name="arms">Arms</string>
+    <string name="you_don_t_have_any_new_notifications">You don\'t have any new notifications yet</string>
+    <string name="_0_followers">0 Followers</string>
+    <string name="splitter">|</string>
+    <string name="_2k_following">2k Following</string>
+    <string name="my_exercises">My Exercises</string>
+    <string name="followers">Followers</string>
+    <string name="you_have_no_followers">You have no followers :(</string>
 </resources>

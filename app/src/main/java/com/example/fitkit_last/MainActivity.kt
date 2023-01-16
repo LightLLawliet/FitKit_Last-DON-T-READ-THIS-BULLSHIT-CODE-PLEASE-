@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun drawerItemListener() {
         mBinding.appDrawerHomeItem.setOnClickListener {
-            replaceFragment(HomeDrawerFragment())
+            replaceFragment(Home())
             mDrawer.closeDrawer(GravityCompat.START)
         }
         mBinding.appDrawerAboutItem.setOnClickListener {

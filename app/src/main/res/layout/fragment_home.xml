@@ -1,14 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".navigation_fragments.Home">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/home" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHomeLeft"
+            style="@style/guidelineLeft"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/activity_horizontal_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHomeRight"
+            style="@style/guidelineRight"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/activity_horizontal_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHomeTop"
+            style="@style/guidelineLeft"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/activity_horizontal_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHomeBottom"
+            style="@style/guidelineLeft"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/textViewHomeExercises"
+            style="@style/homeTitle"
+            android:text="@string/workout_exercises"
+            app:layout_constraintStart_toStartOf="@id/guidelineHomeLeft"
+            app:layout_constraintTop_toTopOf="@id/guidelineHomeTop" />
+
+        <LinearLayout
+            android:id="@+id/linearHomeTrainings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guidelineHomeRight"
+            app:layout_constraintStart_toStartOf="@id/guidelineHomeLeft"
+            app:layout_constraintTop_toBottomOf="@id/textViewHomeExercises">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:src="@drawable/man"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:src="@drawable/cardio"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arms"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTrainingTitle"
+            style="@style/homeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:fontFamily="@font/faustina_regular"
+            android:text="@string/training_plan"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/guidelineHomeLeft"
+            app:layout_constraintTop_toBottomOf="@id/linearHomeTrainings" />
+
+        <LinearLayout
+            android:id="@+id/layoutCardsExercies"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guidelineHomeRight"
+            app:layout_constraintStart_toStartOf="@id/guidelineHomeLeft"
+            app:layout_constraintTop_toBottomOf="@id/textViewTrainingTitle">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/cardview_exercise"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/attribute_gym" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:fontFamily="@font/faustina_regular"
+                    android:letterSpacing="0.02"
+                    android:text="@string/shoulder_press"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_pre_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:letterSpacing="0.02"
+                    android:lineHeight="19sp"
+                    android:text="@string/walking_is_simple_yet_powerful_exercise_for_your_body"
+                    tools:ignore="ExtraText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/cardview_exercise"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/attribute_gym" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:fontFamily="@font/faustina_regular"
+                    android:letterSpacing="0.02"
+                    android:text="@string/jogging"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_pre_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:letterSpacing="0.02"
+                    android:lineHeight="19sp"
+                    android:text="@string/jogging_is_not_so_simple_but_still_powerful_exercise_for_your_body"
+                    tools:ignore="ExtraText" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="50dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineHomeRight"
+            app:layout_constraintStart_toStartOf="@id/guidelineHomeLeft"
+            app:layout_constraintTop_toBottomOf="@id/layoutCardsExercies">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/cardview_exercise"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/attribute_gym" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:fontFamily="@font/faustina_regular"
+                    android:letterSpacing="0.02"
+                    android:text="@string/abs_exercise"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_pre_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:letterSpacing="0.02"
+                    android:lineHeight="19sp"
+                    android:text="@string/abs_is_hard_telling_that_time_is_so_fast_pretty_funny_though"
+                    tools:ignore="ExtraText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/cardview_exercise"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/attribute_gym" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:fontFamily="@font/faustina_regular"
+                    android:letterSpacing="0.02"
+                    android:text="@string/arms"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_pre_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="@dimen/drawer_item_vertical_padding"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:letterSpacing="0.02"
+                    android:lineHeight="19sp"
+                    android:text="Arms is something between walking and ABS, but still not for the whimps."
+                    tools:ignore="ExtraText" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

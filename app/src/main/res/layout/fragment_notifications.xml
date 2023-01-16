@@ -6,8 +6,15 @@
     tools:context=".navigation_fragments.Notifications">
 
     <TextView
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="@dimen/text_size_pre_large"
         android:layout_gravity="center"
-        android:text="@string/notifications" />
+        android:layout_marginBottom="50dp"
+        android:text="@string/you_don_t_have_any_new_notifications"
+        />
 </FrameLayout>
